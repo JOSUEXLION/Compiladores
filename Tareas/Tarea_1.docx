@@ -1,0 +1,16 @@
+Josué De León 
+Tarea de Compiladores
+1.	¿Qué es un compilador?
+Es un programa que sirve para ejecutar otro programa.
+Es un programa informático que traduce un programa escrito en un lenguaje de programación a otro lenguaje de programación. Usualmente el segundo es lenguaje de máquina, pero también puede ser un código intermedio (bytecode), o simplemente texto.
+2.	Tipos de compiladores:
+Compiladores cruzados, optimizadores, de una sola pasada, de varias pasadas, JIT (Just In Time), incrementales, con montador, auto compilador, meta compilador, descompilador.
+-Compiladores de una sola pasada: generan el código máquina a partir de una única lectura del código f 
+-Compiladores de varias pasadas: necesitan leer el código fuente varias veces antes de poder producir el código máquina.
+-Compiladores incrementales: Generan un código objeto, instrucción por instrucción cuando el usuario teclea cada orden individual.
+-Auto compilador: compilador que está escrito en el mismo lenguaje que va a compilar.
+3.	Ensambladores:
+Ensambladores cruzados, residentes, micro ensambladores, macro ensambladores, de una fase y de dos fases.
+4.	¿Qué es intérprete?
+Es un programa que ejecuta línea a línea las instrucciones de un programa de alto nivel. El intérprete carga el código fuente y traduce las instrucciones a un lenguaje intermedio que puede luego ser ejecutado.
+
