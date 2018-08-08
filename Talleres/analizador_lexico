@@ -1,15 +1,15 @@
-import ply.lex as lex
-import re
-import codecs
-import os
-import sys
-#diccionaro de los tokens
+import ply.lex as lex #importamos la librearia ply 
+import re # 
+import codecs #
+import os #
+import sys #
+#definimos diccionaro de los tokens y palabras reservadas
 tokens = reservadas+['ID','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 
 		'ODD','ASSIGN','NE','LT','LTE','GT','GTE',
 		'LPARENT','RPARENT','COMMA','SEMMICOLOM',
 		',DOT','UPDATE'
 ]
-
+#cadena de caracteres 
 reservadas = ['BEGIN','END','IF','THEN','WHILE','DO','CONST','CALL',
 'VAR','PROCEDURE','OUT','IN','ELSE'
 ]
@@ -28,10 +28,11 @@ reservadas = ['BEGIN','END','IF','THEN','WHILE','DO','CONST','CALL',
 #	'in':'IN',
 #	'else':'ELSE',
 # }
-#tokens = tokens+list(reservadas.values())
+#tokens = tokens+list(reservadas.values()) #
 
 t_ignore = '\t'
 t_PLUS = r'\+'
+
 t_MINUS = r'\-'
 t_TIMES = r'\*'
 t_DIVIDE = r'/'
@@ -44,7 +45,7 @@ t_GT = r'>'
 t_GTE = r'>='
 t_LPARENT = r'\('
 t_RPARENT = r'\)'
-t_COMMA = r','
+t_COMMA = r','h b-
 t_SEMMICOLOM = r';'
 t_DOT = r'\.'
 t_UPDATE = r':=' 
