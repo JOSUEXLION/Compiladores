@@ -95,6 +95,7 @@ def buscarFicheros(directorio):
 				break
 	print "Has escogido \"%s\" \n" %files[int(numArchivo)-1]
 
+
 	return files[int(numArchivo)-1]
 
 directorio = '/home/user/Desktop/lex-analizador/test'
