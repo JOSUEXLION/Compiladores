@@ -1,15 +1,17 @@
-import ply.lex as lex #importamos la librearia ply 
-import re # 
-import codecs #
-import os #
-import sys #
-#definimos diccionaro de los tokens y palabras reservadas
+import ply.lex as lex #importamos la librearia ply como lex
+import re # expresiones regulares
+import codecs #codificadores y decodificadores
+import os #Interactúa con el sistema operativo
+import sys #	Interactúa con el sistema de Python
+
+#una lista
+#definimos diccionaro de los tokens
 tokens = reservadas+['ID','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 
 		'ODD','ASSIGN','NE','LT','LTE','GT','GTE',
 		'LPARENT','RPARENT','COMMA','SEMMICOLOM',
 		',DOT','UPDATE'
 ]
-#cadena de caracteres 
+#cadena de caracteres de palabras reservadas
 reservadas = ['BEGIN','END','IF','THEN','WHILE','DO','CONST','CALL',
 'VAR','PROCEDURE','OUT','IN','ELSE'
 ]
@@ -28,11 +30,11 @@ reservadas = ['BEGIN','END','IF','THEN','WHILE','DO','CONST','CALL',
 #	'in':'IN',
 #	'else':'ELSE',
 # }
-#tokens = tokens+list(reservadas.values()) #
+#definimos los tokens
+tokens = tokens+list(reservadas.values()) #
 
 t_ignore = '\t'
 t_PLUS = r'\+'
-
 t_MINUS = r'\-'
 t_TIMES = r'\*'
 t_DIVIDE = r'/'
@@ -50,23 +52,23 @@ t_SEMMICOLOM = r';'
 t_DOT = r'\.'
 t_UPDATE = r':=' 
 
-def t_ID(t):
-	r'[a-zA-Z_][A-Za-z0-9_]*'
-	if t.value.upper() in reservadas:
-		t.value = t.value.upper()
-		t.type = t.value
+def t_ID(t):  #funcion del token
+	r'[a-zA-Z_][A-Za-z0-9_]*' #expresion regular este identificador reconocera cualquier letra, guin bajo,numeros y de cero o muchas veces
+	if t.value.upper() in reservadas: #condicion para convertir la
+		t.value = t.value.upper() #el valor del token es igual a el mismo y lo convierta en letra capital myus
+		t.type = t.value # y que guarde el tipo del tokens y el valor 
 
-		return t 
-def t_newline(t):
+		return t #reconocerr el identificador y retornamos al tokens para print
+def t_newline(t): #funcion de los 
 	r'\n+'
 	t.lexer.lineno += len(t.value)
 
-def t_COMMENT(t):
-	r'\#.*'
-	pass
+def t_COMMENT(t): #funcion de los comentarios 
+	r'\#.*' #nueva expresion regular para reconocer el proceso de los comentarios
+	pass    #reconocera la funcion pero no la va print
 
-def t_NUMBER(t):
-	r'\d+'
+def t_NUMBER(t): #reconocera cualquier numero 
+	r'\d+' # 
 	t.value = int(t.value)
 	return t
 
