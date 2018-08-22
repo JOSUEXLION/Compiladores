@@ -193,10 +193,17 @@ def buscarFicheros(directorio):
 
 
 	return files[int(numArchivo)-1]
+	
+	directorio = '/home/user/Desktop/lex-analizador/test'
+archivo = buscarFicheros(directorio))#contiene el nombre del archivo
+test = directorio+archivo #Contiene el directorio más el nombre del archivo
+fb = codecs.open(test,"r","utf-8") #Nos permite abrir el archive aunque contenga tildes o Ñ
+cadena =fb.read() #Contiene el código fuente del archivo
+fb.close() #Cierra el archivo
 
 
-#Se utiliza para manejar el yacc el cual le permite al programa hacer el análisis sintáctico.
-
+#Se crea el parser que nos permite manejar el yacc
+#Yacc le permite al programa hacer el análisis sintáctico.
 parser  =  yacc.yacc()
 result   =  parser.parse(cadena)
 
