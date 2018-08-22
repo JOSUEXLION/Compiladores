@@ -18,8 +18,9 @@ precedence = (
 )
  
 #Definimos funciones 
-#Analizar producciones 
+#Lista de producciones (p)
 #Regla gramatical lenguaje PL/0
+#Definimos nodos
 
 def   p_program(p):
         '''program  =  block'''
@@ -31,7 +32,7 @@ def  p_constDecl(p):
     #p[0]  = constDecl(p[2])
     print “constDecl”
  
-def p_constDeclEmpty(p):
+def p_constDeclEmpty(p): #No produce nada (vacio)
 '''constDecl = empty'''
     #p[0] = Null()
     print “nulo”
@@ -162,10 +163,22 @@ def p_empty(p):
  '''empty : '''
   pass
 
-# Lineno, nos permite saber en que línea se produce un error
 def p_error(p):
-  print “ërror de sintaxis”,p
-  print “error en la linea”+str(p.lineno) 
+  print “ërror de sintaxis”,p #Imprime si hay algun error de sintaxis
+  print “error en la linea”+str(p.lineno) # Lineno, nos permite saber en que línea se produce un error
+  
+#Declaramos funcion que recorre los ficheros
+ def buscarFicheros(directorio):
+  
+# Codigo analixador léxico
 
 
+#Se utiliza para manejar el yacc el cual le permite al programa hacer el análisis sintáctico.
+
+parser  =  yacc.yacc()
+result   =  parser.parse(cadena)
+
+print result
+
+ 
 
