@@ -170,7 +170,29 @@ def p_error(p):
 #Declaramos funcion que recorre los ficheros
  def buscarFicheros(directorio):
   
-# Codigo analixador léxico
+def buscarFicheros(directorio):
+	ficheros = []
+	numArchivo = ''
+	respuesta = False
+	cont = 1
+
+	for base, dirs, files in os.walk(directorio):
+		ficheros.append(files)
+
+	for file in files:
+		print str(cont)+". "+file
+		cont = cont+1
+
+	while respuesta == False:
+		numArchivo = raw_input('\nNumero del test ')
+		for file in files:
+			if file == files[int(numArchivo)-1]:
+				respuesta = True
+				break
+	print "Has escogido \"%s\" \n" %files[int(numArchivo)-1]
+
+
+	return files[int(numArchivo)-1]
 
 
 #Se utiliza para manejar el yacc el cual le permite al programa hacer el análisis sintáctico.
