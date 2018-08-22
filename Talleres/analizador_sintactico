@@ -1,22 +1,25 @@
-import ply.yacc ass yacc
-import os
-import codecs
-import re 
-from analizadorlexico.py import tokens 
-from sys import stdin
+import ply.yacc ass yacc #Importamos de la libreria ply la function yacc
+import os #Interactúa con el sistema operativo
+import codecs #codificadores y decodificadores
+import re #Importamos el modulo re 
+from analizadorlexico.py import tokens #Del analizador léxico importamos los 
+from sys import stdin 
 
-
+#Se define que tokens por orden de prioridad
 precedence = (
-    (‘right’ , ‘ASSIGN’),
-    (‘right’ , ‘UPDATE’),
-    (‘left’ ,  ‘NE’),
-    (‘left’ ,  ‘LT’ , ‘LTE’ , ‘GT’ , ‘GTE’),
-    (‘left’ , ‘PLUS’ , ‘MINUS’),
-    (‘left’ , ‘TIMES’ , ‘DIVIDE’),
-    (‘right’ , ‘ODD’),
-    (‘left’ , ‘LPARENT’ , ‘RPARENT’),
+    ('right' , 'ASSIGN'), #Operador de asignación
+    ('right' , 'UPDATE'), #Operador de actualización 
+    ('left' ,  'NE'),
+    ('left' ,  'LT' , 'LTE' , 'GT', 'GTE'),
+    ('left' , 'PLUS' , 'MINUS'),  #Suma y resta 
+    ('left' ,'TIMES' , 'DIVIDE'), #Multiplicacion y division
+    ('right' , 'ODD'), #Sirve para ver si una expresión es impar 
+    ('left' , 'LPARENT' , 'RPARENT'),
 )
  
+#Definimos funciones 
+#Analizar producciones 
+#Regla gramatical lenguaje PL/0
 
 def   p_program(p):
         '''program  =  block'''
