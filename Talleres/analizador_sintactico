@@ -1,4 +1,4 @@
-import ply.yacc ass yacc #Importamos de la libreria ply la function yacc
+import ply.yacc as yacc #Importamos de la libreria ply la function yacc
 import os #Interactúa con el sistema operativo
 import codecs #codificadores y decodificadores
 import re #Importamos el modulo re 
